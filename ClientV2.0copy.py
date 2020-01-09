@@ -8,7 +8,7 @@ print("")
 print("Initializing...")
 #Do 'time.sleep(number of seconds)' so that the execution of a program delays for a few seconds
 time.sleep(1)
-print("Name of the available host server is.....LAPTOP-9D19D51H")
+
 s=socket.socket()
 print("")
 HOST=input(str("Please enter the host server's address/name:"))
