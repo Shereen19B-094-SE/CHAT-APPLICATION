@@ -1,6 +1,45 @@
 import time
 import socket
 import sys
+from tkinter import*
+import tkinter.font as font
+
+window = Tk()
+myFont=font.Font(family='Corbel')
+
+label=Label(window,text="Welcome to")
+label['font']=myFont
+label2=Label(window,text="AVIAN")
+label2['font']=myFont
+label.pack()
+label2.pack()
+messages = Text(window)
+messages.pack()
+
+
+button=Button(window,text="SEND",bg="orange",height=2)
+button['font']=myFont
+button.pack(side="right",fill=BOTH)
+
+input_user = StringVar()
+input_field = Entry(window, text=input_user)
+input_field.pack(side=BOTTOM, fill=BOTH, ipady=14)
+
+
+def Enter_pressed(event):
+    input_get = input_field.get()
+    print(input_get)
+    messages.insert(INSERT, '%s\n' % input_get)
+    input_user.set('')
+    return "break"
+
+        
+
+frame = Frame(window)
+input_field.bind("<Return>", Enter_pressed)
+frame.pack()
+window.mainloop()
+####END OF GUI CODE##########
 
 
 print("Welcome to AVIAN Help Center Version 2.0!")
